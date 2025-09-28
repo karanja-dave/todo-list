@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <title>Todo App</title>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+
+        <style>
+            .attribution { font-size: 11px; text-align: center; margin-top: 40px; }
+            .attribution a { color: hsl(228, 45%, 44%); }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Todo</h1>
+            <button id="switch">
+            <img src="./images/icon-sun.svg" alt="theme switcher" id="icon">
+            </button>
+        </header>
+
+        <main>
+            <!--form to input task-->
+            <form>
+                <input type="text" id="todo-input" placeholder="Create a new todo..." required>
+                <button type="submit" id="submitbtn">+Submit</button>
+                <!-- 3 types of btns: button, submit and reset: -->
+                    <!-- button: default,creates clickable btn -->
+                    <!-- submit:trys to submit form whose btn is defined as submit -->
+                    <!-- reset: btn type resets values input in the form -->
+            </form>
+
+            <!--list to hold to do items-->
+            <section class="todo-list">
+                <ul></ul>
+
+            <!--filters and clear button -->
+            <div class="todo">
+                <p >0 items left</p>
+                <div class="filters">
+                    <button type="button" data-filter="all">All</button>
+                    <button type="button" data-filter="active">Active</button>
+                    <button type="button" data-filter="completed">Completed</button>
+                        <!-- data-filter is just a label that tells JS what btn is supposed to do -->
+                         <!-- it reduces the repetition of calling each button in JS by calling them all at once in a loop like I've shown in my JS script -->
+                </div>
+                <button id="clear-completed">Clear Completed</button>
+            </div>
+            </section>
+
+            <!-- Drag-and-drop hint -->
+            <p class="hint">Drag and drop to reorder list</p>
+        </main>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Your Name Here</a>.
+        </div>
+    </body>
+
+</html>
