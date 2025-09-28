@@ -88,17 +88,70 @@ form button {
 }
 
 .todo-list li {
-  padding: 16px;
-  border-bottom: 1px solid #25273c;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #333;
+  position: relative;
 }
 
-.todo-list li.completed {
-  text-decoration: line-through;
-  color:#25273c;
+/*circular checkbox */
+.todo-list input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.todo-list input:checked {
+  background: linear-gradient(to right, hsl(220, 98%, 61%), hsl(280, 87%, 65%));
+  border: none;
+}
+
+.todo-list input:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+}
+
+/* Task text */
+.todo-text {
+  flex: 1;
+  font-size: 16px;
+  color: #fff;
+}
+
+.todo-list li.completed .todo-text {
+  text-decoration: line-through;
+  color: #777;
+}
+
+
+
+/* Delete button */
+.delete-btn {
+  margin-left: 12px;
+  color: #999;
+  cursor: pointer;
+  display: none; /* hidden by default */
+}
+
+.todo-list li:hover .delete-btn {
+  display: inline; /* show only when hovering */
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
 
 /* filters and clear button styling */
 .todo {
@@ -142,7 +195,8 @@ form button {
   font-size: 11px;
   text-align: center;
   margin-top: 40px;
+  color: white;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: white;
 }
