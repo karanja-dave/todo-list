@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentFilter = 'all';
 
+    // function for success messages
     function showAlert(message, type = "success") {
         const alertBox = document.createElement("div");
         alertBox.className = `alert ${type}`;
