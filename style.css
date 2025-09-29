@@ -18,10 +18,38 @@ button:hover, #clear-completed:hover {
   color: hsl(220, 98%, 61%);
 }
 
-/* style for body */
+/*dark theme, default */
 body {
   background-color: black;
-  
+  color: white;
+}
+
+/* light theme */
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.light header {
+  background: url('images/bg-desktop-light.jpg') no-repeat center/cover;
+}
+
+body.light form {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+body.light .todo-list {
+  background-color: #fff;
+  color: black;
+}
+
+body.light .todo-list li {
+  border-bottom: 1px solid #ddd;
+}
+
+body.light .todo-text {
+  color: #000;
 }
 
 /* styling header */
@@ -183,6 +211,37 @@ form button {
   color: #708090;
   cursor: pointer;
 }
+
+/* style for success and error message */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #25273c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 9999;
+  font-size: 14px;
+  animation: fadeInOut 2s ease forwards;
+}
+
+.alert.success {
+  background: #28a745; /* green for success */
+}
+
+.alert.error {
+  background: #dc3545; /* red for errors */
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
 
 .hint {
   text-align: center;
