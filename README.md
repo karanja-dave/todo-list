@@ -6,7 +6,7 @@ The app allows users to manage tasks efficiently with full CRUD operations, filt
 This project is based on the [Frontend Mentor Todo App Challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).  
 
 ##  Live Demo
-Check out the deployed project here: [Todo App Live](https://your-username.github.io/todo-app/)
+Check out the deployed project here: [Todo App Live]([https://your-username.github.io/todo-app/](https://karanja-dave.github.io/todo-list/))
 
 ##  Features
 - Add new todos to the list  
