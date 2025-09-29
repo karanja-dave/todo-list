@@ -166,19 +166,18 @@ form button {
 
 /* Delete button */
 .delete-btn {
-  margin-left: 12px;
-  color: #999;
-  cursor: pointer;
-  display: none; /* hidden by default */
-}
-
-.todo-list li:hover .delete-btn {
-  display: inline; /* show only when hovering */
+  background: none;      /* remove default button bg */
+  border: none;          /* remove border */
+  cursor: pointer;       /* show hand cursor */
+  padding: 2px;
+  font-size: 18px;       /* make the icon larger */
+  color: white;            /* set icon color (affects <i> inside) */
 }
 
 .delete-btn:hover {
-  color: red;
+  color: darkred;        /* change color when hovered */
 }
+
 
 
 /* filters and clear button styling */
