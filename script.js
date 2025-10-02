@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () { //executs JS code af
          if (checked) {
             showAlert("Task marked as complete!", "success");
         } else {
-            showAlert("Task unmarked");
+            showAlert("Task unmarked", "error");
         }
         return;
         }
