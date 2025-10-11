@@ -229,6 +229,28 @@ form button {
   border: none;
   color: #708090;
   cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Hover outline effect for dark mode */
+body:not(.light) .filters button:hover {
+  outline: 1px solid white;
+  color: white;
+}
+
+/* Hover outline effect for light mode */
+body.light .filters button:hover {
+  outline: 1px solid #1e90ff;
+  color: #1e90ff;
+}
+
+/* Optional: highlight the active filter button */
+.filters button.active {
+  outline: 1px solid currentColor;
+  font-weight: bold;
+  border-radius: 4px;
 }
 
 
