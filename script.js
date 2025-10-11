@@ -228,24 +228,32 @@ document.addEventListener('DOMContentLoaded', function () { //executs JS code af
     const defaultBtn = document.querySelector('[data-filter="all"]');
     if (defaultBtn) defaultBtn.classList.add('active');
 
-    const switchBtn = document.getElementById("switch");
-    const themeIcon = document.getElementById("theme-icon");
-    const body = document.body;
+const switchBtn = document.getElementById("switch");
+const themeIcon = document.getElementById("theme-icon");
+const body = document.body;
 
-    if (localStorage.getItem("theme") === "light") {
-        body.classList.add("light");
-        themeIcon.src = "images/icon-moon.svg";
-    }
+// Check and apply saved theme on load
+const savedTheme = localStorage.getItem("theme");
 
-    switchBtn.addEventListener("click", () => {
-        body.classList.toggle("light");
+if (savedTheme === "dark") {
+    body.classList.remove("light");
+    themeIcon.src = "images/icon-sun.svg"; // shows sun when in dark mode (to switch to light)
+} else {
+    body.classList.add("light");
+    themeIcon.src = "images/icon-moon.svg"; // shows moon when in light mode (to switch to dark)
+}
 
-        if (body.classList.contains("light")) {
+// Toggle theme on button click
+switchBtn.addEventListener("click", () => {
+    body.classList.toggle("light");
+
+    if (body.classList.contains("light")) {
         themeIcon.src = "images/icon-moon.svg";
         localStorage.setItem("theme", "light");
-        } else {
+    } else {
         themeIcon.src = "images/icon-sun.svg";
         localStorage.setItem("theme", "dark");
-        }
-    });
+    }
+});
+;
 });
