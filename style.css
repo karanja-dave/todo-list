@@ -162,6 +162,35 @@ form button {
   color: #777;
 }
 
+/* Fix edit input layout and shape -kija elewa hii code ya edit-input */ 
+.edit-input {
+  flex: 1 1 100% !important;  /* forces full width inside flex li */
+  display: block !important;
+  font-size: 16px !important;
+  padding: 10px 10px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  background-color: #fff !important;
+  color: #000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  min-width: 0 !important; /* ensures text not cropped */
+}
+
+.edit-input:focus,
+.edit-input:active {
+  border: 1px solid  !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Fix alignment inside li */
+.todo-list li {
+  align-items: flex-start !important; /* allow input to expand without clipping */
+}
+
+
+
 
 
 /* Delete button */
@@ -258,3 +287,5 @@ form button {
 .attribution a {
   color: white;
 }
+
+

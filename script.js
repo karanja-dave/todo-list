@@ -167,18 +167,50 @@ document.addEventListener('DOMContentLoaded', function () { //executs JS code af
             
 
         // checkbox functionality
-        if (e.target.matches('.todo-checkbox')) {
+    if (e.target.matches('.todo-checkbox')) {
         const checked = e.target.checked;
         li.classList.toggle('completed', checked);
         updateItemsLeft();
         applyFilter(currentFilter);
-         if (checked) {
+        if (checked) {
             showAlert("Task marked as complete!", "success");
         } else {
             showAlert("Task unmarked", "error");
         }
         return;
-        }
+    }
+
+    // ✏️ Editable text functionality
+    if (e.target.matches('.todo-text')) {
+        const span = e.target;
+        const currentText = span.textContent;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'edit-input';
+        input.value = currentText;
+
+        // Replace span with input
+        span.replaceWith(input);
+        input.focus();
+
+        const saveEdit = () => {
+            const newText = input.value.trim();
+            const newSpan = document.createElement('span');
+            newSpan.className = 'todo-text';
+            newSpan.textContent = newText || currentText; // Fallback to original if empty
+            input.replaceWith(newSpan);
+        };
+
+        input.addEventListener('blur', saveEdit);
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                input.blur(); // Triggers blur to save
+            }
+        });
+
+        return;
+    }
 
         
     });
